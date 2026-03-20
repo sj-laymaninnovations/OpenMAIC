@@ -1,14 +1,14 @@
 import type { ChartData } from '@/lib/types/slides';
 
 export const CHART_TYPE_MAP: Record<string, string> = {
-  bar: '柱状图',
+  bar: 'Bar Chart',
   column: '条形图',
-  line: '折线图',
-  area: '面积图',
-  scatter: '散点图',
-  pie: '饼图',
-  ring: '环形图',
-  radar: '雷达图',
+  line: 'Line Chart',
+  area: 'Area Chart',
+  scatter: 'Scatter Chart',
+  pie: 'Pie Chart',
+  ring: 'Doughnut Chart',
+  radar: 'Radar Chart',
 };
 
 export const CHART_DEFAULT_DATA: Record<string, ChartData> = {

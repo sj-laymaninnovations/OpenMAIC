@@ -72,7 +72,7 @@ export async function generateFullScenes(
     currentStage: 3,
     overallProgress: 66,
     stageProgress: 0,
-    statusMessage: `正在并行生成 ${totalScenes} 个场景...`,
+    statusMessage: `Generating ${totalScenes} scenes in parallel...`,
     scenesGenerated: 0,
     totalScenes,
   });
@@ -89,7 +89,7 @@ export async function generateFullScenes(
           currentStage: 3,
           overallProgress: 66 + Math.floor((completedCount / totalScenes) * 34),
           stageProgress: Math.floor((completedCount / totalScenes) * 100),
-          statusMessage: `已完成 ${completedCount}/${totalScenes} 个场景`,
+          statusMessage: `Completed ${completedCount}/${totalScenes} scenes`,
           scenesGenerated: completedCount,
           totalScenes,
         });
@@ -470,7 +470,7 @@ async function generateSlideContent(
   const lang = outline.language || 'zh-CN';
 
   // Build assigned images description for the prompt
-  let assignedImagesText = '无可用图片，禁止插入任何 image 元素';
+  let assignedImagesText = 'No images available. Do not insert any image elements';
   let visionImages: Array<{ id: string; src: string }> | undefined;
 
   if (assignedImages && assignedImages.length > 0) {
@@ -521,7 +521,7 @@ async function generateSlideContent(
 
     if (mediaParts.length > 0) {
       const mediaText = mediaParts.join('\n\n');
-      if (assignedImagesText.includes('禁止插入') || assignedImagesText.includes('No images')) {
+      if (assignedImagesText.includes('Do not insert') || assignedImagesText.includes('No images')) {
         assignedImagesText = mediaText;
       } else {
         assignedImagesText += `\n\n${mediaText}`;
@@ -539,7 +539,7 @@ async function generateSlideContent(
     title: outline.title,
     description: outline.description,
     keyPoints: (outline.keyPoints || []).map((p, i) => `${i + 1}. ${p}`).join('\n'),
-    elements: '（根据要点自动生成）',
+    elements: '(Auto-generated from key points)',
     assignedImages: assignedImagesText,
     canvas_width: canvasWidth,
     canvas_height: canvasHeight,
@@ -1040,8 +1040,8 @@ function generateDefaultPBLActions(_outline: SceneOutline): Action[] {
     {
       id: `action_${nanoid(8)}`,
       type: 'speech',
-      title: 'PBL 项目介绍',
-      text: '现在让我们开始一个项目式学习活动。请选择你的角色，查看任务看板，开始协作完成项目。',
+      title: 'PBL Project Introduction',
+      text: 'Now let us begin a project-based learning activity. Please select your role, review the task board, and start collaborating on the project.',
     },
   ];
 }
@@ -1148,7 +1148,7 @@ function generateDefaultSlideActions(outline: SceneOutline, elements: PPTElement
     actions.push({
       id: `action_${nanoid(8)}`,
       type: 'spotlight',
-      title: '聚焦重点',
+      title: 'Focus on Key Points',
       elementId: textElements[0].id,
     });
   }
@@ -1160,7 +1160,7 @@ function generateDefaultSlideActions(outline: SceneOutline, elements: PPTElement
   actions.push({
     id: `action_${nanoid(8)}`,
     type: 'speech',
-    title: '场景讲解',
+    title: 'Scene Lecture',
     text: speechText,
   });
 
@@ -1175,8 +1175,8 @@ function generateDefaultQuizActions(_outline: SceneOutline): Action[] {
     {
       id: `action_${nanoid(8)}`,
       type: 'speech',
-      title: '测验引导',
-      text: '现在让我们来做一个小测验，检验一下学习成果。',
+      title: 'Quiz Introduction',
+      text: 'Now let us take a short quiz to test what we have learned.',
     },
   ];
 }
@@ -1189,8 +1189,8 @@ function generateDefaultInteractiveActions(_outline: SceneOutline): Action[] {
     {
       id: `action_${nanoid(8)}`,
       type: 'speech',
-      title: '交互引导',
-      text: '现在让我们通过交互式可视化来探索这个概念。请尝试操作页面中的元素，观察变化。',
+      title: 'Interactive Guide',
+      text: 'Now let us explore this concept through interactive visualization. Try manipulating the elements on the page and observe the changes.',
     },
   ];
 }

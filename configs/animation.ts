@@ -7,7 +7,7 @@ export const ANIMATION_CLASS_PREFIX = 'animate__';
 export const ENTER_ANIMATIONS = [
   {
     type: 'bounce',
-    name: '弹跳',
+    name: 'Bounce',
     children: [
       { name: '弹入', value: 'bounceIn' },
       { name: '向右弹入', value: 'bounceInLeft' },
@@ -20,7 +20,7 @@ export const ENTER_ANIMATIONS = [
     type: 'fade',
     name: '浮现',
     children: [
-      { name: '浮入', value: 'fadeIn' },
+      { name: 'Float In', value: 'fadeIn' },
       { name: '向下浮入', value: 'fadeInDown' },
       { name: '向下长距浮入', value: 'fadeInDownBig' },
       { name: '向右浮入', value: 'fadeInLeft' },
@@ -37,7 +37,7 @@ export const ENTER_ANIMATIONS = [
   },
   {
     type: 'rotate',
-    name: '旋转',
+    name: 'Rotation',
     children: [
       { name: '旋转进入', value: 'rotateIn' },
       { name: '绕左下进入', value: 'rotateInDownLeft' },
@@ -48,7 +48,7 @@ export const ENTER_ANIMATIONS = [
   },
   {
     type: 'zoom',
-    name: '缩放',
+    name: 'Zoom',
     children: [
       { name: '放大进入', value: 'zoomIn' },
       { name: '向下放大进入', value: 'zoomInDown' },
@@ -59,7 +59,7 @@ export const ENTER_ANIMATIONS = [
   },
   {
     type: 'slide',
-    name: '滑入',
+    name: 'Slide In',
     children: [
       { name: '向下滑入', value: 'slideInDown' },
       { name: '从右滑入', value: 'slideInLeft' },
@@ -69,7 +69,7 @@ export const ENTER_ANIMATIONS = [
   },
   {
     type: 'flip',
-    name: '翻转',
+    name: 'Flip',
     children: [
       { name: 'X轴翻转进入', value: 'flipInX' },
       { name: 'Y轴翻转进入', value: 'flipInY' },
@@ -87,7 +87,7 @@ export const ENTER_ANIMATIONS = [
   },
   {
     type: 'lightSpeed',
-    name: '飞入',
+    name: 'Fly In',
     children: [
       { name: '从右飞入', value: 'lightSpeedInRight' },
       { name: '从左飞入', value: 'lightSpeedInLeft' },
@@ -98,7 +98,7 @@ export const ENTER_ANIMATIONS = [
 export const EXIT_ANIMATIONS = [
   {
     type: 'bounce',
-    name: '弹跳',
+    name: 'Bounce',
     children: [
       { name: '弹出', value: 'bounceOut' },
       { name: '向左弹出', value: 'bounceOutLeft' },
@@ -111,7 +111,7 @@ export const EXIT_ANIMATIONS = [
     type: 'fade',
     name: '浮现',
     children: [
-      { name: '浮出', value: 'fadeOut' },
+      { name: 'Float Out', value: 'fadeOut' },
       { name: '向下浮出', value: 'fadeOutDown' },
       { name: '向下长距浮出', value: 'fadeOutDownBig' },
       { name: '向左浮出', value: 'fadeOutLeft' },
@@ -128,7 +128,7 @@ export const EXIT_ANIMATIONS = [
   },
   {
     type: 'rotate',
-    name: '旋转',
+    name: 'Rotation',
     children: [
       { name: '旋转退出', value: 'rotateOut' },
       { name: '绕左下退出', value: 'rotateOutDownLeft' },
@@ -139,7 +139,7 @@ export const EXIT_ANIMATIONS = [
   },
   {
     type: 'zoom',
-    name: '缩放',
+    name: 'Zoom',
     children: [
       { name: '缩小退出', value: 'zoomOut' },
       { name: '向下缩小退出', value: 'zoomOutDown' },
@@ -150,7 +150,7 @@ export const EXIT_ANIMATIONS = [
   },
   {
     type: 'slide',
-    name: '滑出',
+    name: 'Slide Out',
     children: [
       { name: '向下滑出', value: 'slideOutDown' },
       { name: '从左滑出', value: 'slideOutLeft' },
@@ -160,7 +160,7 @@ export const EXIT_ANIMATIONS = [
   },
   {
     type: 'flip',
-    name: '翻转',
+    name: 'Flip',
     children: [
       { name: 'X轴翻转退出', value: 'flipOutX' },
       { name: 'Y轴翻转退出', value: 'flipOutY' },
@@ -178,7 +178,7 @@ export const EXIT_ANIMATIONS = [
   },
   {
     type: 'lightSpeed',
-    name: '飞出',
+    name: 'Fly Out',
     children: [
       { name: '从右飞出', value: 'lightSpeedOutRight' },
       { name: '从左飞出', value: 'lightSpeedOutLeft' },
@@ -202,10 +202,10 @@ export const ATTENTION_ANIMATIONS = [
   },
   {
     type: 'other',
-    name: '其他',
+    name: 'Other',
     children: [
-      { name: '弹跳', value: 'bounce' },
-      { name: '闪烁', value: 'flash' },
+      { name: 'Bounce', value: 'bounce' },
+      { name: 'Flash', value: 'flash' },
       { name: '脉搏', value: 'pulse' },
       { name: '橡皮筋', value: 'rubberBand' },
       { name: '心跳（快）', value: 'heartBeat' },
@@ -219,16 +219,16 @@ interface SlideAnimation {
 }
 
 export const SLIDE_ANIMATIONS: SlideAnimation[] = [
-  { label: '无', value: 'no' },
-  { label: '随机', value: 'random' },
+  { label: 'None', value: 'no' },
+  { label: 'Random', value: 'random' },
   { label: '左右推移', value: 'slideX' },
   { label: '上下推移', value: 'slideY' },
   { label: '左右推移（3D）', value: 'slideX3D' },
   { label: '上下推移（3D）', value: 'slideY3D' },
   { label: '淡入淡出', value: 'fade' },
-  { label: '旋转', value: 'rotate' },
+  { label: 'Rotation', value: 'rotate' },
   { label: '上下展开', value: 'scaleY' },
   { label: '左右展开', value: 'scaleX' },
-  { label: '放大', value: 'scale' },
-  { label: '缩小', value: 'scaleReverse' },
+  { label: 'Zoom In', value: 'scale' },
+  { label: 'Zoom Out', value: 'scaleReverse' },
 ];
